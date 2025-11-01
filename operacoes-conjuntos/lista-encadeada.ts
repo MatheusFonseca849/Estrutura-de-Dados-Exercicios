@@ -93,6 +93,14 @@ class LinkedList<T> {
             current = current.next;
         }
     }
+
+    intersection(list: LinkedList<T>) {
+        let current = list.head;
+        while (current !== null) {
+            this.add(current.data);
+            current = current.next;
+        }
+    }
 }
 
 export default LinkedList;
