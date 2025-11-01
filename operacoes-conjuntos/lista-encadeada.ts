@@ -54,6 +54,17 @@ class LinkedList<T> {
         }
         process.stdout.write("\n");
     }
+
+    contains(data: T) {
+        let current = this.head;
+        while (current !== null) {
+            if (current.data === data) {
+                return true;
+            }
+            current = current.next;
+        }
+        return false;
+    }
     
     invert() {
         let prev = null;
@@ -97,7 +108,9 @@ class LinkedList<T> {
     intersection(list: LinkedList<T>) {
         let current = list.head;
         while (current !== null) {
-            this.add(current.data);
+            if (this.contains(current.data)) {
+                this.add(current.data);
+            }
             current = current.next;
         }
     }
